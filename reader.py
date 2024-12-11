@@ -40,11 +40,24 @@ db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
 
 def export_data():
-    stations=atlas_client.find(collection_name=COLLECTION_NAME,projection={"stations": 1,"_id": 0})# Solo traemos la clave "network" porque es la que contiene "stations"
-    for data in stations:
+    alldata=atlas_client.find(collection_name=COLLECTION_NAME,projection={
+            "network.stations.id": 1,
+            "network.stations.name": 1,
+            "network.stations.timestamp": 1,
+            "network.stations.free_bikes": 1,
+            "network.stations.empty_slots": 1,
+            "network.stations.extra.uid": 1,
+            "network.stations.extra.last_updated": 1,
+            "network.stations.extra.slots": 1,
+            "network.stations.extra.normal_bikes": 1,
+            "network.stations.extra.ebikes": 1,
+            "_id": 0
+        })
+    print(alldata)
+    for data in alldata:
         id = data.get('id', 'N/A')
         name = data.get('name','N/A')
-        timestamp = data.get('timestamp', 'N/A')
+        timestamp = data.get('timestamp','N/A')
         free_bikes = data.get('free_bikes', 'N/A')
         empty_slots = data.get('empty_slots', 'N/A')
         print(f'id: {id}\nname: {name}\ntimestamp: {timestamp}\nfree bikes: {free_bikes}\nempty slots: {empty_slots}')
@@ -57,6 +70,6 @@ def print_sample_document():
     else:
         print("No se encontraron documentos.")
 
-# print_sample_document()
+#print_sample_document()
 
 export_data()
