@@ -4,6 +4,7 @@
 from pymongo import MongoClient
 import time
 import requests
+import pandas as pd
 
 class AtlasClient ():
 
@@ -53,14 +54,10 @@ def export_data():
             "network.stations.extra.ebikes": 1,
             "_id": 0
         })
-    print(alldata)
-    for data in alldata:
-        id = data.get('id', 'N/A')
-        name = data.get('name','N/A')
-        timestamp = data.get('timestamp','N/A')
-        free_bikes = data.get('free_bikes', 'N/A')
-        empty_slots = data.get('empty_slots', 'N/A')
-        print(f'id: {id}\nname: {name}\ntimestamp: {timestamp}\nfree bikes: {free_bikes}\nempty slots: {empty_slots}')
+    # print(alldata)
+    print(type(alldata))
+    df=pd.DataFrame(alldata)
+    print(df)
 
 
 def print_sample_document():
