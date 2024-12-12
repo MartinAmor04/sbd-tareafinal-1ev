@@ -9,7 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia los archivos Python al contenedor
 COPY connection-mongodb.py .
-COPY reader-mongodb.py .
 
 # Define el comando por defecto que ejecutará los scripts Python
-CMD ["sh", "-c", "python connection-mongodb.py && python reader-mongodb.py"]
+CMD ["python", "./connection-mongodb.py"]

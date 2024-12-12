@@ -3,7 +3,7 @@ import time
 from pymongo import MongoClient
 
 # Configuración de la base de datos
-MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_URI = 'mongodb://mongodb:27017/'
 DB_NAME = 'bicisCorunha'
 COLLECTION_NAME = 'stations'
 API_URL = 'http://api.citybik.es/v2/networks/bicicorunha'

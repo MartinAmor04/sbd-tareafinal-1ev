@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - bicis_network
+    environment:
+      - .env
+
+  script_service:
+    image: martinamor04/bicis-corunha:v1  
+    container_name: get-from-API
+    depends_on:
+      - mongodb
+    networks:
+      - bicis_network
+
+networks:
+  bicis_network:
+    driver: bridge
