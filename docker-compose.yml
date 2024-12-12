@@ -12,7 +12,7 @@ services:
       - .env
 
   script_service:
-    image: martinamor04/bicis-corunha:v1  
+    image: martinamor04/bicis-corunha:latest  
     container_name: get-from-API
     depends_on:
       - mongodb
