@@ -8,8 +8,7 @@ services:
       - "27017:27017"
     networks:
       - bicis_network
-    environment:
-      - .env
+
 
   script_service:
     image: martinamor04/bicis-corunha:latest  
