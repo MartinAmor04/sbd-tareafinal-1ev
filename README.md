@@ -25,7 +25,11 @@ Usa Docker Compose para construir y levantar el entorno completo:
 ```bash
 docker-compose up -d
 ```
-### 3. Verificar los Datos en MongoDBUsa Docker Compose para construir y levantar el entorno completo:
+### 3. Conectarse a Openstack a través de ssh:
+```bash
+ssh -J xuedua059@hadoop.cesga.es cesgaxuser@10.133.27.228
+```
+### 4. Verificar los Datos en MongoDBUsa Docker Compose para construir y levantar el entorno completo:
 ```bash
 docker exec -it mongodb mongosh
 ```
