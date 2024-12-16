@@ -18,7 +18,7 @@ Asegúrate de tener instalados:
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone git@github.com:MartinAmor04/SBD-TareaFinal-1EV.git
+git clone git@github.com:MartinAmor04/sbd-tareafinal-1ev.git
 ```
 ### 2. Construir y Levantar los Servicios
 Usa Docker Compose para construir y levantar el entorno completo:
