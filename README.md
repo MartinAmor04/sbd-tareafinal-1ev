@@ -33,5 +33,28 @@ Dentro del shell de MongoDB, selecciona la base de datos y revisa las coleccione
 ```bash
 use bicisCorunha
 db.stations.find()
+db.stations.countDocuments()
 ```
+# Documentos almacenados durante las vacaciones
+
+Durante el periodo de vacaciones, comprendido entre el **21 de diciembre** y el **8 de enero**, nuestro sistema realiza la recolección de datos con una frecuencia de **49 documentos cada 3 minutos**. Este cálculo asume un funcionamiento continuo las 24 horas del día.
+
+## Cálculo
+
+### Duración de las vacaciones
+- **Del 21 al 31 de diciembre**: 11 días.  
+- **Del 1 al 8 de enero**: 8 días.  
+- **Total**: 19 días.
+
+### Minutos totales
+19 días × 24 horas/día × 60 minutos/hora = **27,360 minutos**
+
+### Número de intervalos de recolección (cada 3 minutos)
+27,360 minutos ÷ 3 minutos/intervalo = **9,120 intervalos**
+
+### Documentos totales almacenados
+9,120 intervalos × 49 documentos/intervalo = **446,880 documentos**
+
+## Resultado
+Durante el periodo de vacaciones, el sistema almacenará un total de **446,880 documentos**.
 
