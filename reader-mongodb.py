@@ -1,6 +1,8 @@
 import pandas as pd
 from pymongo import MongoClient
 import pyarrow  
+from urllib.parse import quote_plus
+
 
 # Establece una conexión a MongoDB y devuelve la colección.
 def connect_to_mongo(uri, db_name, collection_name):
@@ -57,7 +59,15 @@ def export_data(collection, output_csv, output_parquet):
 
 if __name__ == "__main__":
     # Configuración
-    URI = 'mongodb://localhost:27017/'
+    usuario = "xuedua059@hpc"
+    contraseña = "sambollo"
+
+    # Escapa el nombre de usuario y la contraseña
+    usuario_escapado = quote_plus(usuario)
+    contraseña_escapada = quote_plus(contraseña)
+
+    # Crea la URI con los valores escapados
+    URI = f"mongodb://{usuario_escapado}:{contraseña_escapada}@10.133.27.228:27017/"
     DB_NAME = 'bicisCorunha'
     COLLECTION_NAME = 'stations'
     OUTPUT_CSV = './bicisCorunha.csv'
