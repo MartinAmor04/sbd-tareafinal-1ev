@@ -44,6 +44,12 @@ use bicisCorunha
 db.stations.find()
 db.stations.countDocuments()
 ```
+##Ejecutar reader-mongodb.py
+Para ejecutar el script en una terminal:
+```bash
+python reader-mongodb.py
+```
+Cabe destacar que se han limitado las entradas a un máximo de 5 porque hay demasiados datos en la instancia, por lo que el script no funcionaba.
 # Documentos almacenados durante las vacaciones
 
 Durante el periodo de vacaciones, comprendido entre el **21 de diciembre** y el **8 de enero**, nuestro sistema realiza la recolección de datos con una frecuencia de **49 documentos cada 3 minutos**. Este cálculo asume un funcionamiento continuo las 24 horas del día.
