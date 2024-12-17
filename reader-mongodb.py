@@ -60,7 +60,7 @@ def export_data(collection, output_csv, output_parquet):
 if __name__ == "__main__":
     # Configuración
     usuario = "xuedua059@hpc"
-    contraseña = "contraseña"
+    contraseña = "ponercontraseña"
 
     # Escapa el nombre de usuario y la contraseña
     usuario_escapado = quote_plus(usuario)
