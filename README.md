@@ -21,9 +21,7 @@ Asegúrate de tener instalados:
 git clone git@github.com:MartinAmor04/sbd-tareafinal-1ev.git
 ```
 ### 2. Conectarse a Openstack a través de ssh o VPN:
-```bash
-ssh -J xuedua059@hadoop.cesga.es cesgaxuser@10.133.27.228
-```
+Puedes conectarte con la IP mientras estás conectado a la VPN o con ssh 
 ### 3. Copiar docker-compose:
 Copia el contenido de docker-compose y pégalo en el nuevo archivo que creas con el editor de texto 'nano' dentor de la instancia
 ```bash
