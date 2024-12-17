@@ -1,73 +1,77 @@
-# SBD-TareaFinal-1EV
+# SBD-FinalTask-1EV
 
-Este repositorio contiene un sistema basado en Docker Compose para gestionar datos de las estaciones de bicicletas en Coruña. El sistema consta de dos servicios principales:
+This repository contains a system based on Docker Compose to manage bike station data in Coruña. The system consists of two main services:
 
-1. **MongoDB**: Una base de datos donde se almacenan los datos.
-2. **Get-from-API**: Un servicio Python que extrae información de la API de CitiBike y la guarda en MongoDB.
+1. **MongoDB**: A database where the data is stored.
+2. **Get-from-API**: A Python service that retrieves information from the CitiBike API and stores it in MongoDB.
 
-## 🛠️ Requisitos
+It also includes a **CheapShark-API** repository where you will find another proposal with a different API. This API compares digital PC game websites and keeps track of the prices across multiple stores such as Steam or Fanatical.
 
-Asegúrate de tener instalados:
+## 🛠️ Requirements
+
+Make sure you have installed:
 
 - **Docker** 
 
 ---
 
-## 🚀 Uso del Proyecto
+## 🚀 Project Usage
 
-### 1. Clonar el Repositorio
-
+### 1. Clone the Repository
 ```bash
 git clone git@github.com:MartinAmor04/sbd-tareafinal-1ev.git
 ```
-### 2. Conectarse a Openstack a través de ssh o VPN:
-Puedes conectarte con la IP mientras estás conectado a la VPN o con ssh 
-### 3. Copiar docker-compose:
-Copia el contenido de docker-compose y pégalo en el nuevo archivo que creas con el editor de texto 'nano' dentor de la instancia
+### 2. Connect to Openstack via SSH or VPN:
+You can connect with the IP while being connected to the VPN or through SSH.
+
+### 3. Copy docker-compose:
+Copy the content of docker-compose and paste it into the new file you create with the text editor 'nano' inside the instance
 ```bash
 nano docker-compose.yml
 ```
-### 4. Construir y Levantar los Servicios
-Usa Docker Compose para construir y levantar el entorno completo:
+### 4. Build and Start the Services
+Use Docker Compose to build and bring up the entire environment:
 ```bash
 docker-compose up -d
 ```
-### 4. Verificar los Datos en MongoDBUsa Docker Compose para construir y levantar el entorno completo:
+### 4. Verify the Data in MongoDB
+Exec mongosh in order to interactuate with the database 
 ```bash
 docker exec -it mongodb mongosh
 ```
-Dentro del shell de MongoDB, selecciona la base de datos y revisa las colecciones:
+Inside the MongoDB shell, select the database and check the collections:
 ```bash
 use bicisCorunha
 db.stations.find()
 db.stations.countDocuments()
 ```
-## Ejecutar reader-mongodb.py
-Para ejecutar el script en una terminal:
+## Run reader-mongodb.py
+To run the script in a terminal:
 ```bash
 python reader-mongodb.py
 ```
-Cabe destacar que se han limitado las entradas a un máximo de 5 porque hay demasiados datos en la instancia, por lo que el script no funcionaba.
-# Documentos almacenados durante las vacaciones
+Note that entries have been limited to a maximum of 5 because there is too much data in the instance, which caused the script to malfunction.
 
-Durante el periodo de vacaciones, comprendido entre el **21 de diciembre** y el **8 de enero**, nuestro sistema realiza la recolección de datos con una frecuencia de **49 documentos cada 3 minutos**. Este cálculo asume un funcionamiento continuo las 24 horas del día.
+# Documents Stored During Holidays
+During the holiday period, from **December 21st** to **January 8th**, our system collects data at a frequency of **49 documents every 3 minutes**. This calculation assumes continuous operation 24 hours a day.
 
-## Cálculo
+## Calculation
 
-### Duración de las vacaciones
-- **Del 21 al 31 de diciembre**: 11 días.  
-- **Del 1 al 8 de enero**: 8 días.  
-- **Total**: 19 días.
+### Holiday Duration
+- **From December 21st to 31st**: 11 days.  
+- **From January 1st to 8th**: 8 days.  
+- **Total**: 19 days.
 
-### Minutos totales
-19 días × 24 horas/día × 60 minutos/hora = **27,360 minutos**
+### Total Minutes
+19 days × 24 hours/day × 60 minutes/hour = **27,360 minutes**
 
-### Número de intervalos de recolección (cada 3 minutos)
-27,360 minutos ÷ 3 minutos/intervalo = **9,120 intervalos**
+### Number of Collection Intervals (every 3 minutes)
+27,360 minutes ÷ 3 minutes/interval = **9,120 intervals**
 
-### Documentos totales almacenados
-9,120 intervalos × 49 documentos/intervalo = **446,880 documentos**
+### Total Documents Stored
+9,120 intervals × 49 documents/interval = **446,880 documents**
 
-## Resultado
-Durante el periodo de vacaciones, el sistema almacenará un total de **446,880 documentos**.
+## Result
+During the holiday period, the system will store a total of **446,880 documents**.
+
 
