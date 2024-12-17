@@ -44,7 +44,7 @@ use bicisCorunha
 db.stations.find()
 db.stations.countDocuments()
 ```
-##Ejecutar reader-mongodb.py
+## Ejecutar reader-mongodb.py
 Para ejecutar el script en una terminal:
 ```bash
 python reader-mongodb.py
