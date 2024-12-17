@@ -20,14 +20,19 @@ Asegúrate de tener instalados:
 ```bash
 git clone git@github.com:MartinAmor04/sbd-tareafinal-1ev.git
 ```
-### 2. Construir y Levantar los Servicios
+### 2. Conectarse a Openstack a través de ssh o VPN:
+```bash
+ssh -J xuedua059@hadoop.cesga.es cesgaxuser@10.133.27.228
+```
+### 3. Copiar docker-compose:
+Copia el contenido de docker-compose y pégalo en el nuevo archivo que creas con el editor de texto 'nano' dentor de la instancia
+```bash
+nano docker-compose.yml
+```
+### 4. Construir y Levantar los Servicios
 Usa Docker Compose para construir y levantar el entorno completo:
 ```bash
 docker-compose up -d
-```
-### 3. Conectarse a Openstack a través de ssh:
-```bash
-ssh -J xuedua059@hadoop.cesga.es cesgaxuser@10.133.27.228
 ```
 ### 4. Verificar los Datos en MongoDBUsa Docker Compose para construir y levantar el entorno completo:
 ```bash
