@@ -32,7 +32,8 @@ def export_data(collection, output_csv, output_parquet):
                 "slots": "$extra.slots",
                 "normal_bikes": "$extra.normal_bikes",
                 "ebikes": "$extra.ebikes"
-            }}
+            }},
+            {"$limit": 5}  # Limita a los primeros 5 documentos
         ]
 
         # Ejecución del pipeline
@@ -59,15 +60,9 @@ def export_data(collection, output_csv, output_parquet):
 
 if __name__ == "__main__":
     # Configuración
-    usuario = "xuedua059@hpc"
-    contraseña = "ponercontraseña"
-
-    # Escapa el nombre de usuario y la contraseña
-    usuario_escapado = quote_plus(usuario)
-    contraseña_escapada = quote_plus(contraseña)
 
     # Crea la URI con los valores escapados
-    URI = f"mongodb://{usuario_escapado}:{contraseña_escapada}@10.133.27.228:27017/"
+    URI = f"mongodb://10.133.27.228:27017/"
     DB_NAME = 'bicisCorunha'
     COLLECTION_NAME = 'stations'
     OUTPUT_CSV = './bicisCorunha.csv'
