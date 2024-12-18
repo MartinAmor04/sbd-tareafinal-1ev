@@ -46,7 +46,18 @@ db.stations.find()
 db.stations.countDocuments()
 ```
 ## Run reader-mongodb.py
-To run the script in a terminal:
+### 1. Create and Activate the Virtual Environment
+We will use Conda to manage the environment. Run the following commands in your terminal:
+```bash
+conda create --name API python=3.12.8
+conda activate API
+conda install pip 
+```
+With the environment activated, install all the required libraries from the `requirements.txt` file:
+```bash
+pip install -r requirements.txt
+```
+Run the script:
 ```bash
 python reader-mongodb.py
 ```
